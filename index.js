@@ -1,14 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var extract = require('./extract.js');
-
-var handlerError = function (error, response) {
-  response.writeHead(404);
-  fs.readFile('./app/404.html', function (error, data) {
-    if (error) throw error;
-    response.end(data);
-  });
-}
+var handlerError = require('./handlerError.js');
 
 var server = http.createServer(function (request, response) {
   console.log('Responding to a request');
@@ -20,7 +13,6 @@ var server = http.createServer(function (request, response) {
       handlerError(error, response);
       return;
     } else {
-      // response.setHeader('Content-Type', 'test/html');
       response.setHeader('Content-Type', 'text/html');
       response.end(data);
     }
