@@ -4,7 +4,10 @@ var extract = require('./extract.js');
 
 var handlerError = function (error, response) {
   response.writeHead(404);
-  response.end('<h1>404, Not found !!!</h1>');
+  fs.readFile('./app/404.html', function (error, data) {
+    if (error) throw error;
+    response.end(data);
+  });
 }
 
 var server = http.createServer(function (request, response) {
