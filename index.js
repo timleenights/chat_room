@@ -12,7 +12,6 @@ var handlerError = function (error, response) {
 
 var server = http.createServer(function (request, response) {
   console.log('Responding to a request');
-  // res.end('<h1>Hello, World!</h1>');
 
   var filePath = extract(request.url);
 
@@ -21,6 +20,8 @@ var server = http.createServer(function (request, response) {
       handlerError(error, response);
       return;
     } else {
+      // response.setHeader('Content-Type', 'test/html');
+      response.setHeader('Content-Type', 'text/html');
       response.end(data);
     }
   });
