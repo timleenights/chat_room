@@ -2,6 +2,7 @@ var http = require('http');
 var extract = require('./extract.js');
 var handlerError = require('./handlerError.js');
 var readFile = require('./readFile.js');
+var wss = require('./websockets-server.js');
 
 var server = http.createServer(function (request, response) {
   console.log('Responding to a request');

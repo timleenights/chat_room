@@ -20,5 +20,8 @@
   "homepage": "https://github.com/timleenights/chat_room#readme",
   "devDependencies": {
     "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "ws": "^3.0.0"
   }
 }
