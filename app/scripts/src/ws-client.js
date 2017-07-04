@@ -7,7 +7,7 @@ function init (url) {
 
 function registerOpenHandler (handlerFunction) {
   socket.onopen = () => {
-    console.log('open');
+    console.log('open...');
     handlerFunction();
   };
 }
